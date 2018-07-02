@@ -1,65 +1,71 @@
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 text-center" id="top-row">
+        <div class="col-xs-12" align="center" id="top-row">
             <img src="assets/img/burger.png" alt="da-Burger">
             <h1>Eat da-Burger!</h1>
         </div><br>
+    </div>
+</div>
 
-        </div class="col-xs-6 class="task">
-        {{!-- </div class="col-xs-6 text-center" class="task"> --}}
-            <div class="row">
-                <h4>Orders:</h4>
-                {{#each burgers}}
-                    {{#unless this.devoured}} 
-                    {{!-- if this.devoured = 'true' skip placing data in next div --}}
-                <div class="col-xs-3 text-left">
-                    
-                    {{!-- Post id and burger-name within preformated text element--}}
-                    <pre>{{this.id}}. {{this.burger_name}}</pre>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4" align="center" id="placed-orders">
+
+            <h4><strong></strong><i>ordered:</i></strong></h4>
+            {{#each burgers}}
+                {{#unless this.devoured}} 
+                
+                {{!-- Post id and burger-name within preformated text element--}}
+                <pre>{{this.id}}. {{this.burger_name}}</pre>
+        </div>
+        <div class="col-xs-4" align="center">
 
                 {{!-- Send this.id back to the server if this.devoured = true --}}
                 <input type="hidden" name="burger_id" type="text" data-burger_id={{this.id}}>
                 <br>
-                <button class="btn devour_button" data-burger_id={{this.id}}>DEVOUR IT!</button>
-
-            </div>           
-            {{/unless}}
+                <button class="btn-default btn-md" id="button" data-burger_id={{this.id}}>DEVOUR IT!</button>
+                        
+            {{!-- if this.devoured = 'true' skip placing data in next div --}}
+                {{/unless}}
             {{/each}}
-            </div>
         </div>
         
         {{!-- Burger once devoured moves elsewhere on the screen --}}
-        <div class="col-xs-6 text-right" class="task">
-            <h4>Devoured:</h4>
-            <div class='row'>
+        <div class="col-xs-4" align="center">
+
+            <h4><strong></strong><i>devoured:</i></strong></h4>
             {{#each burgers}}
                 {{#if this.devoured}} 
-                    <div class="col-xs-3 text-center">
+
                     {{!-- if this.devoured = true, create a button that is readonly with id and burgername. --}}
                     <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+
                 {{/if}}
             {{/each}}
-            </div>
         </div>
+    </div>
+</div>
 
-        {{!-- Enter a burger to devour, submit the text to burgers_controller.js, use data to add to db --}}
-        <div class="container">
-            <div class="row">
-              <form class="submit-burger">
+{{!-- Enter a burger to devour, submit the text to burgers_controller.js, use data to add to db --}}
+<div class="container">
+    <div class="row">
+        <form class="submit-burger">
 
-                <div class="form-group col-xs-12" align="center">
-                    {{!-- <form action="/burger/insert" method="POST"> --}}
-                        <br>
-                        <input type="text" id="order-burger" order-burger="burger_name">
-                        <br><br>
-                        <button type="submit" class="btn btn-primary btn lg" id="text-enter-button">SUBMIT</button>
-                    {{!-- </form> --}}
-                    <p>Enter in a burger you would like to eat!</p>
-                </div>
-              </form>
-            </div>
+        <div class="form-group col-xs-12" align="center">
+            {{!-- <form action="/burger/insert" method="POST"> --}}
+                <br>
+                <input type="text" id="order-burger" order-burger="burger_name">
+                <br>
+
+                <h4><strong><i>Place your
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    order here!</i></strong></h4>
+
+                <button type="submit" class="btn-default btn-md" id="button">SUBMIT</button>
+            {{!-- </form> --}}
+
         </div>
+        </form>
     </div>
 </div>
 

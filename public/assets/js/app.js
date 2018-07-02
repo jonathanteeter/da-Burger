@@ -15,7 +15,7 @@ $(document).ready(function(){
           console.log(response);
           console.log("created new burger");
           // Reload the page to get the updated list
-          window.location.reload();
+          window.location.reload(); //**********************
         }
       );
     });
@@ -38,9 +38,24 @@ $(document).ready(function(){
           function() {
             console.log("created new burger");
             // Reload the page to get the updated list
-            location.reload();
+            location.reload(); //**********************
           }
         );
-        
     })
+
+    // Delete the devoured Burgers
+    // $(".delete-cat").on("click", function(event) {
+    //   var id = $(this).data("id");
+  
+    //   // Send the DELETE request.
+    //   $.ajax("/api/burgers/" + burger_id, {
+    //     type: "DELETE"
+    //   }).then(
+    //     function() {
+    //       console.log("deleted burger", burger_id);
+    //       // Reload the page to get the updated list
+    //       location.reload(); *********************
+    //     }
+    //   );
+    // });
 })    
