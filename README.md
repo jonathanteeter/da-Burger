@@ -33,7 +33,6 @@ None
 
 * Working with handlebars took some practice but again as understanding came was fun to render the html back to the front-end.
 
-
-## Link to [My Portfolio](https://teeterjm58.github.io/Responsive-Portfolio/portfolio.html)
+## Link to [My Portfolio](https://teeterjm58.github.io/jtPortfolio/)
 
 
