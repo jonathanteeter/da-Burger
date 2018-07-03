@@ -13,6 +13,10 @@ pre {
     block-size: 100px, 100px;
 }
 
+#devoured_box {
+    width: 200px;
+}
+
 #button {
     color: rgb(39, 31, 31);
     text-align: center;

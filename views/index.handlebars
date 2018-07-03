@@ -17,19 +17,26 @@
                 
                 {{!-- Post id and burger-name within preformated text element--}}
                 <pre>{{this.id}}. {{this.burger_name}}</pre>
-        </div>
-        <div class="col-xs-4" align="center">
 
-                {{!-- Send this.id back to the server if this.devoured = true --}}
-                <input type="hidden" name="burger_id" type="text" data-burger_id={{this.id}}>
-                <br>
-                <button class="btn-default btn-md" id="button" data-burger_id={{this.id}}>DEVOUR IT!</button>
-                        
-            {{!-- if this.devoured = 'true' skip placing data in next div --}}
+                {{!-- if this.devoured = 'true' skip placing data in next div --}}
                 {{/unless}}
             {{/each}}
         </div>
         
+        <div class="col-xs-4" align="center">
+
+            {{!-- Send this.id back to the server if this.devoured = true --}}
+            <input type="hidden" name="burger_id" type="text" data-burger_id={{this.id}}>
+
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                <br><br>
+                <button class="devour_button btn-default btn-md" id="button" data-burger_id={{this.id}}>DEVOUR IT!</button>
+                {{/unless}}
+            {{/each}}
+
+        </div>              
+
         {{!-- Burger once devoured moves elsewhere on the screen --}}
         <div class="col-xs-4" align="center">
 
@@ -38,7 +45,7 @@
                 {{#if this.devoured}} 
 
                     {{!-- if this.devoured = true, create a button that is readonly with id and burgername. --}}
-                    <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+                    <input class="form-control" id="devoured_box" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
 
                 {{/if}}
             {{/each}}
