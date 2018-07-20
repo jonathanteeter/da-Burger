@@ -1,4 +1,4 @@
-INSERT INTO burgers_db (burger_name, devoured) VALUES
+INSERT INTO burgers (burger_name, devoured) VALUES
 	('guacamole burger', true),
 	('spicy baja burger', true),
 	('mushroom swiss burger', false);
