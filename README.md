@@ -13,9 +13,9 @@ Eat-Da-Burger! is a restaurant app that lets users input the names of burgers th
     * https://developer.chrome.com/apps/app_frameworks  
 * Key technologies used to build this app are:
     * Bootstrap (Front-end framework)
-    * Handlebars (Front-end templating engine)
-    * Express.js (Server framework)
     * Node.js (Server-side JavaScript environment)
+    * Express.js (Node.js web server framework)
+    * Handlebars (Front-end templating engine)
     * MySQL (RDBMS)
     * Heroku (Cloud Application Platform)
 
